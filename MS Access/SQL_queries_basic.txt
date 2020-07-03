@@ -1,0 +1,99 @@
+-- Create and alter
+CREATE TABLE Students
+(
+S_id int NOT NULL PRIMARY KEY,
+LastName varchar(50),
+FirstName varchar(50),
+Address varchar(255),
+Phone int,
+PrintBalance float
+)
+
+--
+ALTER TABLE Students
+ALTER COLUMN Phone char(10)
+
+--
+INSERT INTO Students
+VALUES (2, 'White', 'Daniel', '6 Indro Rd', 9845125, 30.25);
+
+--
+UPDATE Students SET Phone = '0000000000'
+WHERE S_Id=1;
+
+
+-- Select
+SELECT LastName, FirstName, BirthDate
+FROM Students
+WHERE BirthDate>=#2/1/2000#;
+
+--
+SELECT LastName, FirstName, Gender, BirthDate
+FROM Students
+WHERE BirthDate>=#1/1/2000# And Gender='F';
+
+--
+SELECT LastName, FirstName, Gender, BirthDate
+FROM Students
+WHERE FirstName like 'B*';
+
+--
+SELECT LastName, FirstName, Gender, BirthDate
+FROM Students
+WHERE (FirstName Not Like 'J*' And BirthDate Between #1/1/1999# And #1/1/2002#) Or FirstName In ('Phoebe','Sarah','Brian');
+
+-- Subqueries
+SELECT Gender, LastName, FirstName
+FROM Students
+ORDER BY 1, 2;
+
+--
+SELECT S_Id, FirstName, LastName
+FROM Students
+WHERE S_Id IN (
+SELECT Student_ID
+FROM Enrolment
+WHERE Subject_ID = 1);
+
+--
+SELECT S_Id, FirstName, LastName
+FROM Students
+WHERE S_Id IN (
+SELECT Student_ID
+FROM Enrolment
+WHERE Subject_ID IN (
+SELECT Subject_ID
+FROM Subjects
+WHERE Subject_Teacher = 'Chan'
+));
+
+-- Basic operators
+SELECT LastName, FirstName, DATE()-BirthDate
+FROM Students;
+
+--
+SELECT LastName, FirstName, INT((DATE()-BirthDate)/365) AS Age
+FROM Students;
+
+--
+SELECT LastName, FirstName, INT((DATE()-BirthDate)/365) AS Age
+FROM Students
+WHERE INT((DATE() - BirthDate)/365) IN ( SELECT MAX(INT((DATE() - BirthDate)/365)) FROM Students );
+
+--
+SELECT Gender, MAX(INT((DATE()-BirthDate)/365)) AS Average_Age
+FROM Students
+GROUP BY Gender;
+
+--
+SELECT Gender, max(int((DATE()-BirthDate)/365))
+FROM Students
+GROUP BY Gender
+HAVING max(int((DATE()-BirthDate)/365))>21;
+
+-- Join tables
+SELECT E.Subject_ID, S.Subject_Name, E.Student_ID, U.LastName
+FROM Enrolment AS E, Subjects AS S, Students AS U
+WHERE E.Subject_ID=S.Subject_ID And E.Student_ID=U.S_Id And S.Subject_Name='Math';
+
+

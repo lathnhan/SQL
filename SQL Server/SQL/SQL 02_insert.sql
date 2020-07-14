@@ -3,7 +3,7 @@
 	--Columns can be put in any order 
 	--Character and date values are put in quotes
 	--Cannot omit inserting data into PRIMARY KEY or NOT NULL
-		--depid is a FOREIGN KEY so it can contains NULL
+		--depid is a FOREIGN KEY so it can contains NULL (line 31)
 
 
 INSERT INTO departments (depid, name) VALUES (1, 'Management');

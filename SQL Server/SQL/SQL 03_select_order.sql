@@ -1,9 +1,13 @@
+------------------------------------------------------------------------
+--Nhan La
 --SELECT and ORDER columns
 	--SELECT all or certain columns
 	--Column alias
 	--Add columns to the result
 	--Concatenate columns
 	--ORDER BY column values, ascending (default) or descending
+------------------------------------------------------------------------
+
 
 USE tutorial;
 

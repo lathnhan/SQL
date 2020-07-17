@@ -1,3 +1,5 @@
+------------------------------------------------------------------------
+--Nhan La
 --WHERE condition
 	--ORDER option
 	--String and numeric conditions 
@@ -5,6 +7,7 @@
 	--Interval conditions: BETWEEN, AND, OR
 	--Conditions IN and NOT IN
 	--Condition LIKE and wildcards
+------------------------------------------------------------------------
 
 
 USE tutorial;

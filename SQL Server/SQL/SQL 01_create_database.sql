@@ -1,3 +1,5 @@
+------------------------------------------------------------------------
+--Nhan La
 --Create database and tables
 
 --PRIMARY KEY constraint: defines a unique identification of each record in a table
@@ -10,7 +12,7 @@
 --FOREIGN KEY: one or multiple columns to establish a link between tables
 	--FOREIGN KEY points to the PRIMARY KEY of another table
 	--Here all departments in table EMPLOYEES must be associated with a department in the table DEPARTMENTS
--- 
+------------------------------------------------------------------------
 
 
 CREATE DATABASE tutorial;

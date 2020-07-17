@@ -1,10 +1,12 @@
+------------------------------------------------------------------------
+--Nhan La
 --INSERT INTO: insert a new row in a table
 	--INSERT INTO table_name(column1, column2, ...) VALUES (value1, value2...);
 	--Columns can be put in any order 
 	--Character and date values are put in quotes
 	--Cannot omit inserting data into PRIMARY KEY or NOT NULL
 		--depid is a FOREIGN KEY so it can contains NULL (line 31)
-
+------------------------------------------------------------------------
 
 INSERT INTO departments (depid, name) VALUES (1, 'Management');
 INSERT INTO departments (name, depid) VALUES ('Administration', 2);

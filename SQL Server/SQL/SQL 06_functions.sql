@@ -1,9 +1,11 @@
-
+------------------------------------------------------------------------
+--Nhan La
 --Aggregate functions
 	--Use functions SUM, MIN, MAX, AVG, COUNT to query aggregate statistics
 	--Categorize table into groups with GROUP BY
 	--Retrive unique values with DISTINCT
 	--Other clauses: HAVING, LIKE
+------------------------------------------------------------------------
 
 
 USE tutorial;
